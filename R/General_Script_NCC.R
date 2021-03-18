@@ -4,7 +4,7 @@
 #####################################################################
 #####################################################################
 
-rm(list=ls())
+rm(list=ls()) ; setwd("data/")
 library('ggplot2') ; library('readxl') ; library('cowplot') ; library('tidyverse') ; library('rstan') ; 
 library('bayesplot') ; library('parallel') ; library('purrr') ; library('brms') ; library('abind') ; library('export')
 options(mc.cores = parallel::detectCores())
@@ -264,7 +264,7 @@ Table_Final <- rbind(Data_Coral_SnS_2005,Data_Coral_SnS_2008_2009_2010,Data_Cora
                      Data_Coral_SnS_2013_2014_2015,Data_Coral_SnS_2016)
 colnames(Table_Final) <- c("Year","Species","Site","X","Y","Z","Mean_Diam","Bidimensionnal_Area","Surface_Area")
 # Saving table (to run ~100 times)
-write.table(Table_Final, "/Predictions/SNS_001.xls", dec = ",", sep="\t", row.names = F)
+write.table(Table_Final, "Predictions/SNS_001.xls", dec = ",", sep="\t", row.names = F)
 
 ##########################################################################################################################
 ### > FOR MORE ACCURACY IT IS POSSIBLE TO RUN THE CURRENT SCRIPT 100 TIMES AND TO SAVE EACH DATA IN AN UNIQUE FOLDER < ###
@@ -273,28 +273,28 @@ write.table(Table_Final, "/Predictions/SNS_001.xls", dec = ",", sep="\t", row.na
 ##########################################################################################################################
 
 # Opening document from a same folder
-# setwd("/Predictions") ; library(here)
+ setwd("Predictions/") ; library(here)
 # files_names <- list.files(here())
-# nb_files <- length(files_names)
+ nb_files <- length(files_names)
 # data_names <- vector("list",length=nb_files)
-# for (i in 1 : nb_files) {data_names[i] <- strsplit(files_names[i], split=".xls")}
-# for (i in 1:nb_files) {assign(data_names[[i]], read.delim2(paste(here(files_names[i]))))}
+ for (i in 1 : nb_files) {data_names[i] <- strsplit(files_names[i], split=".xls")}
+ for (i in 1:nb_files) {assign(data_names[[i]], read.delim2(paste(here(files_names[i]))))}
 # Save data in the same folder
-# dataset_list <- vector("list",length=nb_files)
-# for (i in 1:nb_files) {dataset_list[[i]] <- get(data_names[[i]])}
-# size_iter = vector("list", length=nb_files)
-# for (i in 1:nb_files) {size_iter[[i]] = dim(dataset_list[[i]])[1]}
-# vector_Size = vector("list", length=nb_files)
-# for (i in 1:nb_files) {vector_Size[[i]] = rep(i,size_iter[[i]])}
-# Size_vector_Iter = vector_Size[[1]]
-# for (i in 2:nb_files){Size_vector_Iter <- c(Size_vector_Iter, vector_Size[[i]])}
+ dataset_list <- vector("list",length=nb_files)
+ for (i in 1:nb_files) {dataset_list[[i]] <- get(data_names[[i]])}
+ size_iter = vector("list", length=nb_files)
+ for (i in 1:nb_files) {size_iter[[i]] = dim(dataset_list[[i]])[1]}
+ vector_Size = vector("list", length=nb_files)
+ for (i in 1:nb_files) {vector_Size[[i]] = rep(i,size_iter[[i]])}
+ Size_vector_Iter = vector_Size[[1]]
+ for (i in 2:nb_files){Size_vector_Iter <- c(Size_vector_Iter, vector_Size[[i]])}
 # Compiling everything 
-# complete_data <- dataset_list[[1]]
-# for (i in 2:nb_files){complete_data <- rbind(complete_data, dataset_list[[i]])}
+ complete_data <- dataset_list[[1]]
+ for (i in 2:nb_files){complete_data <- rbind(complete_data, dataset_list[[i]])}
 # Final data
-# complete_data = cbind(complete_data, Size_vector_Iter)
+ complete_data = cbind(complete_data, Size_vector_Iter)
 # Finalising the final dataset with 100 random iterations
-# write.table(complete_data, "/data/SNS_100iter.xls", dec = ",", sep="\t", row.names = F)
+ write.table(complete_data, "data/SNS_100iter.xls", dec = ",", sep="\t", row.names = F)
 
 ##############################################################
 # PART 2 - ELABORATING A CORAL GROWTH MODEL FOR EACH SPECIES #
@@ -358,7 +358,7 @@ Fig_3b = ggplot(Calcification_Alizarin_Metabo, aes(x = Surface_Area, y = Product
 
 ## Adding uncertainties in our predictions
 # Opening document from a same folder
-files_names <- list.files(here("/Predictions"))
+files_names <- list.files(here("data/Predictions"))
 nb_files <- length(files_names) ; data_names <- vector("list",length=nb_files) ; dataset_list <- vector("list",length=nb_files)
 for (i in 1:nb_files) {data_names[i] <- strsplit(files_names[i], split=".xls")}
 for (i in 1:nb_files) {assign(data_names[[i]], read.delim2(paste(here(files_names[i]))))}
@@ -489,8 +489,8 @@ Geom_Confint$Metabolism[Geom_Confint$Metabolism == 1] <- "Allometric" ; Geom_Con
 # VALORISING RESULTS #
 ######################
 
-export::graph2eps(Fig_2 , file = "/Results/Figure_2.esp",  cairo = TRUE)
-export::graph2eps(Fig_3a, file = "/Results/Figure_3a.esp", cairo = TRUE)
-export::graph2eps(Fig_3b, file = "/Results/Figure_3b.esp", cairo = TRUE)
-export::graph2eps(Fig_4a, file = "/Results/Figure_3a.esp", cairo = TRUE)
+export::graph2eps(Fig_2 , file = "Results/Figure_2.esp",  cairo = TRUE)
+export::graph2eps(Fig_3a, file = "Results/Figure_3a.esp", cairo = TRUE)
+export::graph2eps(Fig_3b, file = "Results/Figure_3b.esp", cairo = TRUE)
+export::graph2eps(Fig_4a, file = "Results/Figure_3a.esp", cairo = TRUE)
 export::graph2eps(Fig_4b, file = "/Results/Figure_3b.esp", cairo = TRUE)
