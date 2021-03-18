@@ -1,6 +1,7 @@
+--------------
 
-## Title: Juvenile corals underpin coral reef carbonate production after disturbance
-### J. Carlot*, M. Kayal, H. S. Lenihan, S. J. Brandl, J. M. Casey, M. Adjeroud, U. Cardini, A. Merciere, B. Espiau, D. R. Barneche, A. Rovere, L. Hédouin & V. Parravicini
+### Title: Juvenile corals underpin coral reef carbonate production after disturbance
+#### J. Carlot*, M. Kayal, H. S. Lenihan, S. J. Brandl, J. M. Casey, M. Adjeroud, U. Cardini, A. Merciere, B. Espiau, D. R. Barneche, A. Rovere, L. Hédouin & V. Parravicini
 
 ![alt text](https://github.com/JayCrlt/Allometric_coral_growth/blob/master/Results/Graphical_Abstract.jpg?raw=true)
 ###### Abstract: Sea-level rise is predicted to cause major damage to tropical coastlines. While coral reefs can act as natural barriers for ocean waves, their protection hinges on the ability of scleractinian corals to produce enough calcium carbonate (CaCO<sub>3</sub>) to keep up with rising sea levels. As a consequence of intensifying disturbances, coral communities are changing rapidly, potentially reducing community-level CaCO<sub>3</sub> production. By combining colony-level physiology and long-term monitoring data, we show that reefs recovering from major disturbances can produce 40% more CaCO<sub>3</sub> than currently estimated due to the disproportionate contribution of juvenile corals. However, the buffering effect of highly productive juvenile corals is compromised by recruitment failures, which have been more frequently observed after large-scale, repeated bleaching events. While the size structure of corals can bolster a critical ecological function on reefs, climate change impacts on recruitment may undermine this buffering effect, thus further compromising the persistence of reefs and their provision of important ecosystem services. </div>
