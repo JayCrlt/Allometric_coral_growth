@@ -9,9 +9,9 @@
 --------------
 
 The current folders are:
-  1) R - This folder is including the main code for producing Figures 1 to 5 through currently 2 scripts. The first one is General_Script_NCC (Figure 1 to 4) and the second one is Script_Mohsen_Data to valorize the IPM outputs made by M. Kayal (Fig. 5)
-  2) Data - This folder is including all the data required for running both scripts
+  1) _R_ - This folder is including the main code for producing Figures 1 to 5 through currently 2 scripts. The first one is General_Script_NCC (Figure 1 to 4) and the second one is Script_Mohsen_Data to valorize the IPM outputs made by M. Kayal (Fig. 5)
+  2) _Data_ - This folder is including all the data required for running both scripts
 NB: All the size population raw datasets have to be asked at Hunter S. Lehnihan (Pr. at Santa Barbara, United-States), Mehdi Adjeround (Pr. at IRD Perpignan, France) and Mohsen Kayal (Dr. at IRD Noumea, New Caledonia)
           - This folder is also including a sub-folder Models with both isometric and allometric models
           - Right now, the sub-folder "Predictions" is an overview of the Coral community size distributions campaign, launched 100 times and saved into a unique dataset. Because of the size of the folder, the unique dataset only is available. Please, take note that you can run the script anyway.
-  3) Results - This folder is including all the figures for the article submission (which is meaning, main figures 1 to 5 + All the supplementary figures)
+  3) _Results_ - This folder is including all the figures for the article submission (which is meaning, main figures 1 to 5 + All the supplementary figures)
