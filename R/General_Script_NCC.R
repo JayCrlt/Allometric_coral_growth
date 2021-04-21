@@ -355,7 +355,7 @@ Fig_3b = ggplot(Calcification_Alizarin_Metabo, aes(x = Surface_Area, y = Product
 ###############################################################
 # PART 3 - DEFINITION OF THE CARBONATE TRAJECTORIES IN MOOREA #
 ###############################################################
-getwd()
+
 ## Adding uncertainties in our predictions
 # Opening document from a same folder
 files_names <- list.files(here::here("data/Predictions"))
