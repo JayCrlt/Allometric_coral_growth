@@ -355,13 +355,13 @@ Fig_3b = ggplot(Calcification_Alizarin_Metabo, aes(x = Surface_Area, y = Product
 ###############################################################
 # PART 3 - DEFINITION OF THE CARBONATE TRAJECTORIES IN MOOREA #
 ###############################################################
-
+getwd()
 ## Adding uncertainties in our predictions
 # Opening document from a same folder
-files_names <- list.files(here("data/Predictions"))
+files_names <- list.files(here::here("data/Predictions"))
 nb_files <- length(files_names) ; data_names <- vector("list",length=nb_files) ; dataset_list <- vector("list",length=nb_files)
 for (i in 1:nb_files) {data_names[i] <- strsplit(files_names[i], split=".xls")}
-for (i in 1:nb_files) {assign(data_names[[i]], read.delim2(paste(here(files_names[i]))))}
+for (i in 1:nb_files) {assign(data_names[[i]], read.delim2(paste(getwd(),"/Predictions/",files_names[i], sep ="")))}
 for (i in 1:nb_files) {dataset_list[[i]] <- get(data_names[[i]])}
 # Build 3 * 100 datasets according to species
 ACR_SNS = vector(mode="list", length=nb_files) ; POC_SNS = vector(mode="list", length=nb_files) ; POR_SNS = vector(mode="list", length=nb_files)
